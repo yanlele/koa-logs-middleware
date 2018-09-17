@@ -22,4 +22,13 @@ router.get('/test/', (ctx) => {
     ctx.body = 'test';
 });
 
+router.post('/test/', (ctx) => {
+    const requestBody = ctx.request.body;
+    ctx.logger.debug(JSON.stringify(requestBody));
+    let returnMsg = Object.assign(requestBody, {
+        add: 'add message'
+    });
+    ctx.body = returnMsg;
+});
+
 module.exports = router;

@@ -10,20 +10,39 @@ describe('mainTest', function () {
         it('get method', function (done) {
             request.get('/home')
                 .end((err, res) => {
-                    expect(res.body).is.a.string;
+                    expect(res.body).is.a('object');
                     done();
                     if(err) {
                         done(err);
                     }
                 })
         });
-        it('get /home/test', function (done) {
-            request.get('/home/test/')
+        it('get /test', function (done) {
+            request.get('/test/')
+                .expect(200)
                 .end((err, res) => {
-                    expect(res.body).is.a.string;
-                    done();
                     if(err) {
                         done(err);
+                    } else {
+                        expect(res.body).is.a('object');
+                        done();
+                    }
+                })
+        });
+        it('post /test/', function (done) {
+            request.post('/test/')
+                .set('Accept', 'application/json')
+                .expect(200)
+                .send({
+                    name: 'yanle',
+                    age: 25
+                })
+                .end((err, res) => {
+                    if(err) {
+                        done(err)
+                    } else {
+                        expect(res.body).is.an('object');
+                        done()
                     }
                 })
         });

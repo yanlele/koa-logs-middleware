@@ -7,6 +7,7 @@ npm install koa-logs-middleware
 ```
 
 ## 说明
+使用之前，请保证你的node版本>=8 ;                   
 这个模块，可以在项目任何地方记录任何你想要的输出日志。输出内容可以自定。日志输出的时候会默认记录当前发生的时间和日志等级。                   
 可以配置日志输出路径文件夹和日志文件名字, 超级简单的挂载方式如下：
 ```javascript
@@ -47,13 +48,15 @@ router.get('/', (ctx) => {
 
 ## 相关api
 有如下七种日志等级：
+```
 logger.info(*);                         
 logger.error(*);                            
 logger.success(*);                          
 logger.trace(*);                            
 logger.debug(*);                            
 logger.warn(*);                         
-logger.fatal(*);                            
+logger.fatal(*); 
+```                           
 
 这七种日志等级 都会输出到控制台，根据日志等级不同，会输出不同的颜色以作为区分，但是只有info、error和fatal会写入到日志输出文件中。其他的日志只会控制台打印出来。                 
 ![02](./docs/img/02.png)                    
