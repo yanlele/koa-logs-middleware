@@ -1,26 +1,38 @@
 {
-  "name": "koa-logs-middleware",
-  "version": "1.0.0",
-  "description": "koa2 logs middleware",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/yanlele/koa-logs-middleware.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/yanlele/koa-logs-middleware/issues"
-  },
-  "homepage": "https://github.com/yanlele/koa-logs-middleware#readme",
-  "devDependencies": {
-    "chai": "^4.1.2",
-    "chalk": "^2.4.1",
-    "istanbul": "^0.4.5",
-    "mocha": "^5.2.0",
-    "moment": "^2.22.2"
-  }
+    "name": "koa-logs-middleware",
+    "version": "1.0.0",
+    "description": "koa2 logs middleware",
+    "main": "index.js",
+    "scripts": {
+        "test": "mocha ./test/index.test.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/yanlele/koa-logs-middleware.git"
+    },
+    "author": "yanle",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/yanlele/koa-logs-middleware/issues"
+    },
+    "homepage": "https://github.com/yanlele/koa-logs-middleware#readme",
+    "dependencies": {
+        "mocha": "^5.2.0",
+        "moment": "^2.22.2"
+    },
+    "devDependencies": {
+        "chai": "^4.1.2",
+        "chalk": "^2.4.1",
+        "istanbul": "^0.4.5"
+    },
+    "keywords": [
+        "moment",
+        "koa",
+        "koa2",
+        "koa-logger",
+        "koa-logger-middleware",
+        "koa-logs",
+        "logger",
+        "logs"
+    ]
 }
