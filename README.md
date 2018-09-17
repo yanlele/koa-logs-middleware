@@ -1,2 +1,47 @@
 # koa-logs-middleware
 koa2日志监控中间件
+
+## 说明
+这个模块，可以在项目任何地方记录任何你想要的输出日志。输出内容可以自定。日志输出的时候回默认记录当前发生的时间和日志等级。                   
+其中可以配置日志输出路径文件夹和日志文件名字, 超级简单的挂载方式如下：
+```javascript
+const koa = require('koa');
+const app = new koa();
+const logger = require('koa-logs-middleware');
+app.use(logger({
+    defaultPath: path.resolve(__dirname, 'logs'),
+    applicationName: 'app'
+}));
+```
+
+日志输出到文档有三种日志等级：`info、error、fatal`           
+除此之外的日志等级是不会记录到日志文件的。但是会输出到控制台。             
+注册了日志之后，就直接把日志挂在到了ctx上下文，需要使用的地方可以直接呼出：
+```javascript
+router.get('/', (ctx) => {
+    const returnObject = {
+        name: 'yanle',
+        age: 25
+    };
+    ctx.logger.debug('request Param: ',JSON.stringify(ctx.query));
+    ctx.logger.debug('response: ', JSON.stringify(returnObject));
+    ctx.body = returnObject;
+});
+```
+
+## 相关api
+有如下七种日志等级：
+logger.info(*);                         
+logger.error(*);                            
+logger.success(*);                          
+logger.trace(*);                            
+logger.debug(*);                            
+logger.warn(*);                         
+logger.fatal(*);                            
+
+这七种日志等级 都会输出到控制台，根据日志等级不同，会输出不同的颜色以作为区分，但是只有info、error和fatal会写入到日志输出文件中。其他的日志只会控制台打印出来。                 
+![02](./docs/img/02.png)                    
+![03](./docs/img/03.png)                    
+
+
+
