@@ -37,6 +37,8 @@
         "koa-logger-middleware",
         "koa-logs",
         "logger",
-        "logs"
+        "logs",
+        "日志",
+        "日志监控"
     ]
 }

@@ -1,7 +1,11 @@
-const Koa = require('koa');
+const koa = require('koa');
+const app = new koa();
 const bodyParser = require('koa-bodyparser');
-const routing = require('./route');
 const logger = require('../lib/index');
+const path = require('path');
+
+const routing = require('./route');
+
 
 // 解析body
 app.use(bodyParser({
@@ -23,12 +27,18 @@ app.use(async(ctx, next) => {
 });
 
 // 初始化路由中间件
-app.use(routing.routes()).use(routing.allowedMethods());
+app
+    .use(routing.routes())
+    .use(routing.allowedMethods({
+        throw: true
+    }));
+
 
 // 错误处理
 app.on('error', (err, ctx) => {
     ctx.logger.error('server error', err, ctx)
 });
 
+module.exports = app;
 
-const app = new Koa();
+
