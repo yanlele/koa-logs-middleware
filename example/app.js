@@ -14,7 +14,7 @@ app.use(bodyParser({
 
 // 加载日志
 app.use(logger({
-    defaultPath: path.resolve(__dirname, 'logs'),
+    defaultPath: path.resolve(__dirname, '../logs'),
     applicationName: 'app'
 }));
 

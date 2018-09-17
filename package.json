@@ -27,7 +27,10 @@
         "koa-bodyparser": "^4.2.1",
         "koa-router": "^7.4.0",
         "mocha": "^5.2.0",
-        "supertest": "^3.3.0"
+        "supertest": "^3.3.0",
+        "babel-polyfill": "^6.26.0",
+        "babel-core": "^6.26.3",
+        "intelli-espower-loader": "^1.0.1"
     },
     "keywords": [
         "moment",
