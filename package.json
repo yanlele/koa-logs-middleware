@@ -1,47 +1,47 @@
 {
-    "name": "koa-logs-middleware",
-    "version": "0.0.4",
-    "description": "koa2 logs middleware",
-    "main": "index.js",
-    "scripts": {
-        "test": "mocha ./test/index.test.js"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/yanlele/koa-logs-middleware.git"
-    },
-    "author": "yanle",
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/yanlele/koa-logs-middleware/issues"
-    },
-    "homepage": "https://github.com/yanlele/koa-logs-middleware#readme",
-    "dependencies": {
-        "moment": "^2.22.2",
-        "chalk": "^2.4.1"
-    },
-    "devDependencies": {
-        "chai": "^4.1.2",
-        "istanbul": "^0.4.5",
-        "koa": "^2.5.3",
-        "koa-bodyparser": "^4.2.1",
-        "koa-router": "^7.4.0",
-        "mocha": "^5.2.0",
-        "supertest": "^3.3.0",
-        "babel-polyfill": "^6.26.0",
-        "babel-core": "^6.26.3",
-        "intelli-espower-loader": "^1.0.1"
-    },
-    "keywords": [
-        "moment",
-        "koa",
-        "koa2",
-        "koa-logger",
-        "koa-logger-middleware",
-        "koa-logs",
-        "logger",
-        "logs",
-        "日志",
-        "日志监控"
-    ]
+  "name": "koa-logs-middleware",
+  "version": "0.0.5",
+  "description": "koa2 logs middleware",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha ./test/index.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yanlele/koa-logs-middleware.git"
+  },
+  "author": "yanle",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yanlele/koa-logs-middleware/issues"
+  },
+  "homepage": "https://github.com/yanlele/koa-logs-middleware#readme",
+  "dependencies": {
+    "moment": "^2.22.2",
+    "chalk": "^2.4.1"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "istanbul": "^0.4.5",
+    "koa": "^2.5.3",
+    "koa-bodyparser": "^4.2.1",
+    "koa-router": "^7.4.0",
+    "mocha": "^5.2.0",
+    "supertest": "^3.3.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "intelli-espower-loader": "^1.0.1"
+  },
+  "keywords": [
+    "moment",
+    "koa",
+    "koa2",
+    "koa-logger",
+    "koa-logger-middleware",
+    "koa-logs",
+    "logger",
+    "logs",
+    "日志",
+    "日志监控"
+  ]
 }
