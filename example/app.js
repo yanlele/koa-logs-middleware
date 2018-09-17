@@ -13,10 +13,7 @@ app.use(bodyParser({
 }));
 
 // 加载日志
-app.use(logger({
-    defaultPath: path.resolve(__dirname, '../logs'),
-    applicationName: 'app'
-}));
+app.use(logger());
 
 // 开发输入日志
 app.use(async(ctx, next) => {
