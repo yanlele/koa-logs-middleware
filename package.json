@@ -1,6 +1,6 @@
 {
     "name": "koa-logs-middleware",
-    "version": "1.0.0",
+    "version": "0.0.1",
     "description": "koa2 logs middleware",
     "main": "index.js",
     "scripts": {
