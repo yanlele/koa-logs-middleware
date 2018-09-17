@@ -1,5 +1,7 @@
 const expect = require('chai').expect;
 const koaLog = require('../lib/index');
+
+
 const path = require('path');
 
 describe('mainTest', function () {
@@ -10,6 +12,5 @@ describe('mainTest', function () {
                 applicationName: 'app'
             })();
         });
-
     })
 });
