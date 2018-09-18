@@ -28,6 +28,7 @@ router.post('/test/', (ctx) => {
     let returnMsg = Object.assign(requestBody, {
         add: 'add message'
     });
+    ctx.logger.debug(JSON.stringify(returnMsg));
     ctx.body = returnMsg;
 });
 
