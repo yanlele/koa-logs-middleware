@@ -19,6 +19,7 @@ router.get('/home', (ctx) => {
 
 router.get('/test/', (ctx) => {
     ctx.logger.debug('test');
+    ctx.logger.debug('test');
     ctx.body = 'test';
 });
 
