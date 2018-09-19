@@ -1,8 +1,9 @@
 const koa = require('koa');
 const app = new koa();
 const bodyParser = require('koa-bodyparser');
-const logger = require('../lib/index');
+// const logger = require('../lib/index');
 // const logger = require('../lib/logBunyan');
+const logger = require('../lib/koa-pino-logger');
 const path = require('path');
 
 const routing = require('./route');
@@ -14,10 +15,7 @@ app.use(bodyParser({
 }));
 
 // 加载日志
-app.use(logger({
-    defaultPath: path.resolve(__dirname, '../logs'),
-    applicationName: 'app'
-}));
+app.use(logger());
 
 // 初始化路由中间件
 app
