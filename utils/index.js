@@ -19,7 +19,6 @@ const tool = {
             statusCode: ctx.status,
             responseTime: ctx.responseTime,
             headers: ctx.response.header,
-            response: ctx.body
         };
     }
 };
