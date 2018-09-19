@@ -25,6 +25,12 @@ app.use(async(ctx, next) => {
     const ms = new Date() - start;
     ctx.logger.info(`${ctx.method} ${ctx.url} - ${ms}ms`);
 });
+// 初始化路由中间件
+app
+    .use(routing.routes())
+    .use(routing.allowedMethods({
+        throw: true
+    }));
 // 错误处理
 app.on('error', (err, ctx) => {
     ctx.logger.error('server error', err, ctx)

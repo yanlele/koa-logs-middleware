@@ -10,7 +10,7 @@ const index = {
     logTypeList: [
         {
             'type': 'info',
-            'color': 'gray',
+            'color': 'cyan',
             'icon': '>'
         },
         {
