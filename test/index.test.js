@@ -19,7 +19,7 @@ describe('mainTest', function () {
                 })
         });
         it('get /test', function (done) {
-            request.get('/test/')
+            request.get('/test/?name=test')
                 .expect(200)
                 .end((err, res) => {
                     if(err) {
