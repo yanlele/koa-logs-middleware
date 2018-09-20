@@ -25,6 +25,15 @@ router.get('/test/', (ctx) => {
     };
 });
 
+router.get('/err/', (ctx) => {
+    // ctx.log.debug('test');
+    ctx.log.info('test1', 'test2', 'test3');
+    throw new Error('error');
+    ctx.body = {
+        test: 'err'
+    };
+});
+
 router.post('/test/', (ctx) => {
     const requestBody = ctx.request.body;
     ctx.logger.debug(JSON.stringify(requestBody));

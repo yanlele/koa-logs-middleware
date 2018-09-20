@@ -31,6 +31,18 @@ describe('mainTest', function () {
                     }
                 })
         });
+        it('get /err/', function (done) {
+            request.get('/err/?name=test')
+                .end((err, res) => {
+                    if(err) {
+                        done(err);
+                    } else {
+                        expect(res.body).is.a('object');
+                        console.log('res', res.body);
+                        done();
+                    }
+                })
+        });
         it('post /test/', function (done) {
             request.post('/test/')
                 .set('Accept', 'application/json')

@@ -37,11 +37,6 @@ app.use(async(ctx, next) => {
     ctx.logger.info(`${ctx.method} ${ctx.url} - ${ms}ms`);
 });
 
-// 错误处理
-app.on('error', (err, ctx) => {
-    ctx.logger.error('server error', err, ctx)
-});
-
 module.exports = app;
 
 
