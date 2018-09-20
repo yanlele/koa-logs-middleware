@@ -2,8 +2,6 @@ const koa = require('koa');
 const app = new koa();
 const bodyParser = require('koa-bodyparser');
 const logger = require('../lib/index');
-// const logger = require('../lib/logBunyan');
-// const logger = require('../lib/koa-pino-logger');
 const path = require('path');
 
 const routing = require('./route');
