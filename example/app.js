@@ -17,7 +17,8 @@ app.use(bodyParser({
 // 加载日志
 app.use(logger({
     defaultPath: path.resolve(__dirname, '../logs'),
-    applicationName: 'app'
+    applicationName: 'app',
+    auto: true
 }));
 
 // 初始化路由中间件
