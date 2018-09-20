@@ -6,11 +6,12 @@ const request = require('supertest')(app.listen(3000));
 const path = require('path');
 
 describe('mainTest', function () {
-    describe('koaLog', function () {
+    describe('service koaLog', function () {
         it('get method', function (done) {
             request.get('/home')
                 .end((err, res) => {
                     expect(res.body).is.a('object');
+                    console.log('res', res.body);
                     done();
                     if(err) {
                         done(err);
@@ -18,13 +19,26 @@ describe('mainTest', function () {
                 })
         });
         it('get /test', function (done) {
-            request.get('/test/')
+            request.get('/test/?name=test')
                 .expect(200)
                 .end((err, res) => {
                     if(err) {
                         done(err);
                     } else {
                         expect(res.body).is.a('object');
+                        console.log('res', res.body);
+                        done();
+                    }
+                })
+        });
+        it('get /err/', function (done) {
+            request.get('/err/?name=test')
+                .end((err, res) => {
+                    if(err) {
+                        done(err);
+                    } else {
+                        expect(res.body).is.a('object');
+                        console.log('res', res.body);
                         done();
                     }
                 })
@@ -42,6 +56,7 @@ describe('mainTest', function () {
                         done(err)
                     } else {
                         expect(res.body).is.an('object');
+                        console.log('res', res.body);
                         done()
                     }
                 })

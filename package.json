@@ -1,6 +1,6 @@
 {
   "name": "koa-logs-middleware",
-  "version": "0.0.5",
+  "version": "0.1.0",
   "description": "koa2 logs middleware",
   "main": "index.js",
   "scripts": {
@@ -17,21 +17,22 @@
   },
   "homepage": "https://github.com/yanlele/koa-logs-middleware#readme",
   "dependencies": {
-    "bunyan": "^1.8.12",
     "chalk": "^2.4.1",
+    "fast-safe-stringify": "^2.0.6",
+    "fs-extra": "^7.0.0",
     "moment": "^2.22.2"
   },
   "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-polyfill": "^6.26.0",
     "chai": "^4.1.2",
+    "intelli-espower-loader": "^1.0.1",
     "istanbul": "^0.4.5",
     "koa": "^2.5.3",
     "koa-bodyparser": "^4.2.1",
     "koa-router": "^7.4.0",
     "mocha": "^5.2.0",
-    "supertest": "^3.3.0",
-    "babel-polyfill": "^6.26.0",
-    "babel-core": "^6.26.3",
-    "intelli-espower-loader": "^1.0.1"
+    "supertest": "^3.3.0"
   },
   "keywords": [
     "moment",

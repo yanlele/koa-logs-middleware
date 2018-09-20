@@ -2,6 +2,8 @@ const koa = require('koa');
 const app = new koa();
 const bodyParser = require('koa-bodyparser');
 const logger = require('../lib/index');
+// const logger = require('../lib/logBunyan');
+// const logger = require('../lib/koa-pino-logger');
 const path = require('path');
 
 const routing = require('./route');
@@ -13,15 +15,11 @@ app.use(bodyParser({
 }));
 
 // 加载日志
-app.use(logger());
-
-// 开发输入日志
-app.use(async(ctx, next) => {
-    const start = new Date();
-    await next();
-    const ms = new Date() - start;
-    ctx.logger.info(`${ctx.method} ${ctx.url} - ${ms}ms`);
-});
+app.use(logger({
+    defaultPath: path.resolve(__dirname, '../logs'),
+    applicationName: 'app',
+    auto: true
+}));
 
 // 初始化路由中间件
 app
@@ -31,9 +29,13 @@ app
     }));
 
 
-// 错误处理
-app.on('error', (err, ctx) => {
-    ctx.logger.error('server error', err, ctx)
+
+// 开发输入日志
+app.use(async(ctx, next) => {
+    const start = new Date();
+    await next();
+    const ms = new Date() - start;
+    ctx.logger.info(`${ctx.method} ${ctx.url} - ${ms}ms`);
 });
 
 module.exports = app;

@@ -18,9 +18,20 @@ router.get('/home', (ctx) => {
 });
 
 router.get('/test/', (ctx) => {
-    ctx.logger.debug('test');
-    ctx.logger.debug('test');
-    ctx.body = 'test';
+    ctx.log.debug('test');
+    ctx.log.info('test1', 'test2', 'test3');
+    ctx.body = {
+        test: 'test'
+    };
+});
+
+router.get('/err/', (ctx) => {
+    // ctx.log.debug('test');
+    ctx.log.info('test1', 'test2', 'test3');
+    throw new Error('error');
+    ctx.body = {
+        test: 'err'
+    };
 });
 
 router.post('/test/', (ctx) => {
