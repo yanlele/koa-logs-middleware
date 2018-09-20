@@ -163,6 +163,9 @@ auto | 默认为false ，如果改为true, 可以让中间件自动帮我们记�
 ![03](./docs/img/03.png)       
 
 
+使用示例请见 [example](./example/app.js)                      
+如果想看更加完整的记录，可以转向这个项目： [static-server](https://github.com/yanlele/static-server)
+
 ## 更新日志             
 0.1.0:                   
 - 错误监听已经集成在了模块内部，可以不用在app入口加入错误监听了，如果有错误会自动捕获，打印到控制台和输出到日志                                        
@@ -171,7 +174,6 @@ auto | 默认为false ，如果改为true, 可以让中间件自动帮我们记�
 
 
 
-如果想看更加完整的记录，可以转向这个项目： [static-server](https://github.com/yanlele/static-server)
 
 
 
